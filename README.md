@@ -176,8 +176,8 @@ SELECT
 ---
 7
 ## Pain Points & Decisions
-- See [docs/pain_points.md](docs/pain_points.md)
-- See [docs/decisions.md](docs/decisions.md)
+- See [doc/pain_points.md](docs/pain_points.md)
+- See [doc/decisions.md](docs/decisions.md)
 
 
 ---
