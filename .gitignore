@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.DS_Store
+Thumbs.db
+.venv/
+.env/
+.ipynb_checkpoints/
+logs/
+**/tmp/
+**/checkpoint_*/
+.vscode/
+.idea/
+# Databricks exports
+*.dbc
