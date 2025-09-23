@@ -169,23 +169,62 @@ SELECT
 ---
 ## Screenshots
 
-- blank for now
-- blank for now
+### Source Data Upload
+Manually split the original CSV into chunks and uploaded them to the `/streaming` folder to simulate real-time ingestion into the Bronze layer using Autoloader.
+
+![Source Data](doc/img/01_source_data.png.png)
+
+
+### DLT Code Snippet
+Bronze, Silver, and Gold transformations defined in a Delta Live Tables pipeline, with Unity Catalog routing and schema-aware expectations.
+
+![DLT Code Snippet](doc/img/02_dlt_code_snippet.png.png)
+
+
+### Job Run DAG
+Execution DAG showing a successful flow from Bronze → Silver → Gold using job cluster orchestration in Databricks.
+
+![Job Run DAG](doc/img/03_job_run_dag.png.png)
+
+
+### DLT Pipeline Settings (04a)
+DLT pipeline configured in continuous mode with Photon compute enabled and event-based triggering.
+
+![Pipeline Settings 04a](doc/img/04a_pipeline_settings.png.png)
+
+
+### DLT Pipeline Settings (04b)
+![Pipeline Settings 04b](doc/img/04b_pipeline_settings.png.png)
+
+
+### Catalog: `spotify_gold`
+Final analytics-ready Delta tables written to the `spotify_gold` schema, governed and managed via Unity Catalog.
+
+![Catalog spotify_gold](doc/img/05_catalog_spotify_gold.png.png)
+
+
+### SQL sanity (counts & FK nulls) 
+Post-pipeline validation notebook: row count checks, null analysis, and distinct key scans across Bronze, Silver, and Gold layers.
+
+![SQL sanity](doc/img/06_sql_sanity_checks.png.png)
 
 
 ---
 7
 ## Pain Points & Decisions
-- See [doc/pain_points.md](docs/pain_points.md)
-- See [doc/decisions.md](docs/decisions.md)
+- See [doc/pain_points.md](doc/pain_points.md)
+- See [doc/decisions.md](doc/decisions.md)
 
 
 ---
 
 ## Cost & Cluster Notes
 
-- blank for now
-- blank for now
+- For development-scale pipelines, a small job cluster (1–2 workers) is sufficient
+- Photon enabled for performance improvements on Delta and SQL workloads
+- Costs are tied to cluster uptime — shut down clusters when idle to avoid waste
+- Always check Azure vCPU quotas per region to avoid `WAITING_FOR_RESOURCES` errors
+- To reduce cost, used a custom VNet setup instead of a NAT Gateway
 
 ---
 
