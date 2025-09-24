@@ -212,8 +212,7 @@ Post-pipeline validation notebook: row count checks, null analysis, and distinct
 ---
 7
 ## Pain Points & Decisions
-- See [doc/pain_points.md](doc/pain_points.md)
-- See [doc/decisions.md](doc/decisions.md)
+- See [doc/pain_points_and_decisions.md](doc/pain_points_and_decisions.md)
 
 
 ---
